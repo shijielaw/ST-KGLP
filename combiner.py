@@ -2,6 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 
+import math
 import torch
 import torch.nn as nn
 from typing import Optional, List, Union, Tuple
@@ -94,6 +95,8 @@ class Knowledge_Combiner(nn.Module):
             query_emb = head_relation_embeds.mean(dim=1, keepdim=True)
         
         scores = torch.bmm(query_emb, candidate_embeds.transpose(-2, -1))
+        d_m = query_emb.shape[-1]
+        scores = scores / math.sqrt(d_m)
         attention_weights = torch.softmax(scores, dim=-1)
         weighted_candidate_embeds = candidate_embeds * attention_weights.transpose(-2, -1)
         weighted_kg_embeds = torch.cat([head_relation_embeds, weighted_candidate_embeds], dim=1)
