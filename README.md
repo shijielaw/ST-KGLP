@@ -21,6 +21,7 @@ ST-KGLP/
 │   ├── tools.py        # General utilities and KGE processing
 │   └── callbacks.py    # Training callbacks
 ├── prompts/            # Prompt templates
+├── llms/               # LLMs downloader
 ├── lora/               # LoRA weights storage
 ├── log/                # Logs and results
 └── data/               # Dataset storage
