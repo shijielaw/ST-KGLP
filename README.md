@@ -130,3 +130,19 @@ log/res/{dataset_name}/                        # Results and responses
 
 
 
+
+
+## Citation
+
+```
+@inproceedings{luo2026stkglp,
+	title={Combining Structural and Textual Knowledge for Knowledge Graph Link Prediction via Large Language Models},
+	author={Luo, Shijie and Lu, Xinyuan and Zhao, Qinpei and Rao, Weixiong},
+	booktitle={Proceedings of the Nineteenth ACM International Conference on Web Search and Data Mining (WSDM '26)},
+	publisher={Association for Computing Machinery},
+  	address={ID, Boise, USA},
+	pages={479--488},
+	year={2026}
+}
+```
+
