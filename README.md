@@ -1,6 +1,6 @@
 # ST-KGLP: Combining Structural and Textual Knowledge for Knowledge Graph Link Prediction via Large Language Models
 
-This is the PyTorch implementation for [ST-KGLP](https://doi.org/10.1145/3773966.3777934) accepted by WSDM 2026.
+This is our PyTorch implementation for [Combining Structural and Textual Knowledge for Knowledge Graph Link Prediction via Large Language Models](https://doi.org/10.1145/3773966.3777934) accepted by WSDM 2026.
 
 
 
