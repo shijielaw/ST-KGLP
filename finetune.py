@@ -281,7 +281,7 @@ def train(args):
         'adapter_dropout': getattr(args, 'adapter_dropout', 0.05)
     }
     
-    slama_model = Knowledge_Combiner(
+    ft_model = Knowledge_Combiner(
         model, 
         num_prefix, 
         args.llm_hidden_size, 
@@ -334,7 +334,7 @@ def train(args):
         model.model_parallel = True
 
     trainer = CustomTrainer(
-        model=slama_model,
+        model=ft_model,
         train_dataset=train_data,
         eval_dataset=val_data,
         args=transformers.TrainingArguments(
@@ -392,7 +392,7 @@ def train(args):
     if int(os.environ.get("LOCAL_RANK", 0)) == 0:
         # model.save_pretrained(output_dir)
         model.save_pretrained(output_dir, state_dict=old_state_dict())
-        torch.save(slama_model.embeddings, os.path.join(output_dir, "embeddings.pth"))
+        torch.save(ft_model.embeddings, os.path.join(output_dir, "embeddings.pth"))
 
         print("\n If there's a warning about missing keys above, please disregard.\n")
     

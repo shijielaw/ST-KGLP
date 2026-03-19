@@ -8,7 +8,7 @@ import numpy as np
 from collections import defaultdict
 import argparse
 
-
+ 
 def compute_MR(answer_list, prediction_lists, init_rank_list, init_list2name_list):
     ranks = []
 
